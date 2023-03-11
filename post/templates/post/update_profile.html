@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+    
+<form action="" method='POST' enctype="multipart/form-data">
+
+    <h4>Update Article</h4>
+
+    {% csrf_token %}
+    
+    {% for field in form %}
+        <label for="">{{field.label}}</label>
+        {{field}}
+        <br>
+    {% endfor %}
+
+    <button class = "btn btn-primary">Update</button>
+</form>
+
+
+<script>
+
+    let selectField = document.getElementById("id_show")
+
+    selectField.classList.add("form-select")
+    
+</script>
+
+{% endblock content %}
+    

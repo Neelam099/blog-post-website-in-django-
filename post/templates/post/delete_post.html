@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<style>
+    #container{
+        width: 400px;
+        height: auto;
+        padding: 20px 20px 20px 20px;
+        backgroung-color: lightgray;
+        margin: auto;
+        margin-bottom: 100px;
+        margin-top: 100px;
+    }
+
+    .action{
+        width: auto;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around
+    }
+</style>
+
+<form action="" method='POST'>
+{% csrf_token %}
+<div id="container">
+
+    <p>Are you sure you want to delete the <strong> {{blog.title}} </strong> article </p>
+
+    <div class="action">
+        <button class="btn btn-danger">Delete</button>
+
+        <a href="{% url 'myprofile:profile' %}">
+            <div class="success">Cancel</div>
+        </a>
+        
+
+    </div>
+
+</div>
+
+</form>
+    
+{% endblock content %}
+
+
+    
